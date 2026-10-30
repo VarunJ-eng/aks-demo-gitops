@@ -9,11 +9,11 @@ spec:
   source:
     repoURL: https://github.com/VarunJ-eng/aks-demo-gitops.git
     targetRevision: main
-    path: test
+    path: apps
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: test
+    namespace: apps
 
   syncPolicy:
     automated:
