@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: aks-demo-app
+  namespace: apps
   namespace: default
 spec:
   replicas: 3
