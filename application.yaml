@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/VarunJ-eng/aks-demo-gitops.git
     targetRevision: main
-    path: apps
+    path: apps/aks-demo-app
 
   destination:
     server: https://kubernetes.default.svc
