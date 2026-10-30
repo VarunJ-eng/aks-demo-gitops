@@ -4,7 +4,6 @@ kind: Service
 metadata:
   name: aks-demo-app
   namespace: apps
-  namespace: default
 spec:
   type: LoadBalancer
   selector:
