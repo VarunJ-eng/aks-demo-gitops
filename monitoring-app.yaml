@@ -1,4 +1,3 @@
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -8,21 +7,15 @@ metadata:
 spec:
   project: default
 
-  sources:
-    # Official Prometheus Helm chart
-    - repoURL: https://prometheus-community.github.io/helm-charts
-      chart: kube-prometheus-stack
-      targetRevision: 92.17.0
-      helm:
-        releaseName: monitoring
-        valueFiles:
-          - $values/monitoring/prometheus/values.yaml
-          - $values/monitoring/grafana/values.yaml
-
-    # Your GitHub repository containing values.yaml
-    - repoURL: https://github.com/VarunJ-eng/aks-demo-gitops.git
-      targetRevision: main
-      ref: values
+  source:
+    repoURL: https://github.com/VarunJ-eng/aks-demo-gitops.git
+    targetRevision: main
+    path: monitoring/kube-prometheus-stack
+    helm:
+      releaseName: monitoring
+      valueFiles:
+        - values-prometheus.yaml
+        - values-grafana.yaml
 
   destination:
     server: https://kubernetes.default.svc
@@ -34,6 +27,3 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-
-
-
