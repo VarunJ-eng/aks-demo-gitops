@@ -1,17 +1,5 @@
 grafana:
   enabled: true
-
-  admin:
-    existingSecret: grafana-admin
-    userKey: admin-user
-    passwordKey: admin-password
-
-  service:
-    type: ClusterIP
-
-  persistence:
-    enabled: falsegrafana:
-  enabled: true
   service:
     type: ClusterIP
   persistence:
