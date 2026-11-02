@@ -1,6 +1,6 @@
 grafana:
   enabled: true
   service:
-    type: LoadBalancer
+    type: ClusterIP
   persistence:
     enabled: false
